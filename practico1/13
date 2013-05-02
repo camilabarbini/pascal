@@ -1,0 +1,20 @@
+program ComparaTopeYMueve;
+{ Suponiendo la existencia de una pila LIMITE, pasar los elementos de la pila DADA que sean
+mayores o iguales que el tope de LIMITE a la pila MAYORES, y los elementos que sean
+menores a la pila MENORES.}
+uses estructu;
+var
+  LIMITE, DADA, MAYORES, MENORES: Pila;
+begin
+	ReadPila(DADA);
+	ReadPila(LIMITE);
+	InicPila(MAYORES, ' ');
+	InicPila(MENORES, ' ');
+	while not PilaVacia(DADA) do
+    if ( Tope(DADA) < Tope(LIMITE) ) then
+      Apilar(MAYORES, Desapilar(DADA))
+    else
+      Apilar(MENORES, Desapilar(DADA));
+  WritePila(MAYORES);
+  WritePila(MENORES);
+end.
